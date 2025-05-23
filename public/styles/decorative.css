@@ -1,0 +1,62 @@
+/* 
+  背景模式和装饰效果
+  这些样式用于增强网站的视觉吸引力
+*/
+
+.bg-dot-pattern {
+  background-image: radial-gradient(
+    rgba(120, 120, 120, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(120, 120, 120, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(120, 120, 120, 0.1) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(220, 220, 220, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(220, 220, 220, 0.05) 1px, transparent 1px);
+}
+
+/* 装饰线条 */
+.decorative-line {
+  position: relative;
+}
+
+.decorative-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(90deg, #4a90e2, #60a5fa);
+  border-radius: 2px;
+}
+
+/* 渐变文字 */
+.gradient-text {
+  background: linear-gradient(90deg, #4a90e2, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* 卡片悬停效果 */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .hover-lift:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
